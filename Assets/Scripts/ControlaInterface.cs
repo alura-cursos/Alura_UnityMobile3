@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ControlaInterface : MonoBehaviour {
+public class ControlaInterface : MonoBehaviour{
 
     private ControlaJogador scriptControlaJogador;
     public Slider SliderVidaJogador;
