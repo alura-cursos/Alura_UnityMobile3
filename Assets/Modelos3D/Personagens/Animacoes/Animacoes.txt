@@ -1,0 +1,20 @@
+Idle: 2 - 45
+Andar: 51 - 79
+Correr: 82 - 99
+Sentado no chão: 117 - 146
+Olha Relógio: 381 - 420
+Limpa a boca: 423 - 460
+Pulo Correndo: 461 - 491
+Pulo Parado: 582 - 608
+Caindo: 550 - 579
+Morte 1: 492 - 547
+Morto 1: 547.9 - 548
+Morte 2: 901 - 970
+Morto 2: 969.9 - 970
+Cruza os Braços: 781 - 850
+Mãos na Cintura: 851.9 - 900
+Encostado na Parede: 662 - 709
+Abaixar: 971 - 988
+Abaixado: 990 - 991
+Levantar: 1011 - 1020
+Jogar Granada: 1037 - 1106

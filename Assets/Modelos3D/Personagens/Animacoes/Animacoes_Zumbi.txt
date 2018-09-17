@@ -1,0 +1,4 @@
+Andar: 51 - 79
+Idle Zumbi: 208 - 249
+Andar Zumbi: 155 - 205
+Comer Zumbi: 263 - 310
