@@ -25,18 +25,14 @@ public class ControlaJogador : MonoBehaviour, IMatavel, ICuravel
     // Update is called once per frame
     void Update()
     {
-
-        float eixoX = Input.GetAxis("Horizontal");
-        float eixoZ = Input.GetAxis("Vertical");
-
-        direcao = new Vector3(eixoX, 0, eixoZ);
+        
 
         animacaoJogador.Movimentar(direcao.magnitude);
     }
 
     void FixedUpdate()
     {
-        meuMovimentoJogador.Movimentar(direcao, statusJogador.Velocidade);
+        meuMovimentoJogador.Movimentar(statusJogador.Velocidade);
 
         meuMovimentoJogador.RotacaoJogador(MascaraChao);
     }

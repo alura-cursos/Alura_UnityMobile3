@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class BotaoAnalogico : MonoBehaviour, IDragHandler
@@ -10,14 +11,17 @@ public class BotaoAnalogico : MonoBehaviour, IDragHandler
     private RectTransform imagemFundo;
     [SerializeField]
     private RectTransform imagemBolinha;
-   
+
+    [SerializeField]
+    private MeuEventoDinamicoVector2 QuandoMudarOValor;
 
     public void OnDrag(PointerEventData dadosDoMouse)
     {
         var posicaoMouse = CalcularPosicaoMouse(dadosDoMouse);
         var posicaoLimitada = this.LimitarPosicao(posicaoMouse);
         this.PosicionarJoystick(posicaoLimitada);
-        
+
+        this.QuandoMudarOValor.Invoke(posicaoLimitada);
     }
 
     private Vector2 LimitarPosicao(Vector2 posicaoMouse)
@@ -53,3 +57,5 @@ public class BotaoAnalogico : MonoBehaviour, IDragHandler
         return posicao;
     }
 }
+[Serializable]
+public class MeuEventoDinamicoVector2 : UnityEvent<Vector2> { }
