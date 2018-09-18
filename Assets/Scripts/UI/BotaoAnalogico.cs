@@ -22,14 +22,22 @@ public class BotaoAnalogico : MonoBehaviour, IDragHandler
 
     private Vector2 LimitarPosicao(Vector2 posicaoMouse)
     {
-        var posicaoLimitada = posicaoMouse;
-        posicaoLimitada = posicaoLimitada.normalized * this.imagemFundo.rect.width/2 ;
+        var posicaoLimitada = posicaoMouse/this.TamanhoDaImagem();
+        if(posicaoLimitada.magnitude > 1)
+        {
+            posicaoLimitada = posicaoLimitada.normalized;
+        }
         return posicaoLimitada;
+    }
+
+    private float TamanhoDaImagem()
+    {
+        return this.imagemFundo.rect.width / 2;
     }
 
     private void PosicionarJoystick(Vector2 posicaoMouse)
     {
-        this.imagemBolinha.localPosition = posicaoMouse;
+        this.imagemBolinha.localPosition = posicaoMouse * TamanhoDaImagem() ;
     }
 
     private Vector2 CalcularPosicaoMouse(PointerEventData dadosDoMouse)
