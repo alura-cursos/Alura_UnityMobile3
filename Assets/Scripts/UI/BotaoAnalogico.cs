@@ -15,8 +15,16 @@ public class BotaoAnalogico : MonoBehaviour, IDragHandler
     public void OnDrag(PointerEventData dadosDoMouse)
     {
         var posicaoMouse = CalcularPosicaoMouse(dadosDoMouse);
-        this.PosicionarJoystick(posicaoMouse);
-        Debug.Log(posicaoMouse);
+        var posicaoLimitada = this.LimitarPosicao(posicaoMouse);
+        this.PosicionarJoystick(posicaoLimitada);
+        
+    }
+
+    private Vector2 LimitarPosicao(Vector2 posicaoMouse)
+    {
+        var posicaoLimitada = posicaoMouse;
+        posicaoLimitada = posicaoLimitada.normalized * this.imagemFundo.rect.width/2 ;
+        return posicaoLimitada;
     }
 
     private void PosicionarJoystick(Vector2 posicaoMouse)
