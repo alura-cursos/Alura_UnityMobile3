@@ -120,7 +120,7 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
         ControlaAudio.instancia.PlayOneShot(SomDeMorte);
         VerificarGeracaoKitMedico(porcentagemGerarKitMedico);
         scriptControlaInterface.AtualizarQuantidadeDeZumbisMortos();
-        meuGerador.DiminuirQuantidadeDeZumbisVios();
+        
     }
 
     void VerificarGeracaoKitMedico(float porcentagemGeracao)

@@ -61,7 +61,6 @@ public class BotaoAnalogico : MonoBehaviour, IDragHandler, IPointerUpHandler, IP
     {
         this.PosicionarJoystick(Vector2.zero);
         this.QuandoMudarOValor.Invoke(Vector2.zero);
-        Debug.Log("Soltou o mouse");
     }
 
     public void OnPointerDown(PointerEventData dadosDoMouse)

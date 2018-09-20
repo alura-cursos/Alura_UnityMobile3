@@ -30,9 +30,21 @@ public class ReservaFixa : MonoBehaviour {
         this.DevolverObjeto(objeto);
     }
 
-    private void DevolverObjeto(GameObject objeto)
+    public void DevolverObjeto(GameObject objeto)
     {
         objeto.SetActive(false);
         this.reserva.Push(objeto);
+    }
+
+    public GameObject PegarObjeto()
+    {
+        var objeto = this.reserva.Pop();
+        objeto.SetActive(true);
+        return objeto;
+    }
+
+    public bool TemObjeto()
+    {
+        return this.reserva.Count > 0;
     }
 }
