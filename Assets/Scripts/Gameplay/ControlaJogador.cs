@@ -26,15 +26,14 @@ public class ControlaJogador : MonoBehaviour, IMatavel, ICuravel
     void Update()
     {
         
-
-        animacaoJogador.Movimentar(direcao.magnitude);
+        animacaoJogador.Movimentar(this.meuMovimentoJogador.Direcao.magnitude);
     }
 
     void FixedUpdate()
     {
         meuMovimentoJogador.Movimentar(statusJogador.Velocidade);
 
-        meuMovimentoJogador.RotacaoJogador(MascaraChao);
+        meuMovimentoJogador.RotacaoJogador();
     }
 
     public void TomarDano (int dano)
