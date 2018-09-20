@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class ControlaChefe : MonoBehaviour, IMatavel
+public class ControlaChefe : MonoBehaviour, IMatavel, IReservavel
 {
     private Transform jogador;
     private NavMeshAgent agente;
@@ -88,5 +88,10 @@ public class ControlaChefe : MonoBehaviour, IMatavel
         float porcentagemDaVida = (float)statusChefe.Vida / statusChefe.VidaInicial;
         Color corDaVida = Color.Lerp(CorDaVidaMinima, CorDaVidaMaxima, porcentagemDaVida);
         ImagelSlider.color = corDaVida;
+    }
+
+    public void SetReserva(ReservaFixa reserva)
+    {
+       
     }
 }

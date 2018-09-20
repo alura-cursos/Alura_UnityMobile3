@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bala : MonoBehaviour {
+public class Bala : MonoBehaviour, IReservavel
+{
 
     public float Velocidade = 20;
     private Rigidbody rigidbodyBala;
     public AudioClip SomDeMorte;
+
+    private ReservaFixa reserva;
+
+    public void SetReserva(ReservaFixa reserva)
+    {
+        this.reserva = reserva;
+    }
 
     private void Start()
     {

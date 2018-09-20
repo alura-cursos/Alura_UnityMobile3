@@ -27,6 +27,8 @@ public class ReservaFixa : MonoBehaviour {
     private void CriarNovoObjeto()
     {
         var objeto = GameObject.Instantiate(this.prefab, this.transform);
+        var contoleInimigo = objeto.GetComponent<IReservavel>();
+        contoleInimigo.SetReserva(this);
         this.DevolverObjeto(objeto);
     }
 

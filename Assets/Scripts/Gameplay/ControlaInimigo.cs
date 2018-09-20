@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlaInimigo : MonoBehaviour, IMatavel
+public class ControlaInimigo : MonoBehaviour, IMatavel, IReservavel
 {
 
     public GameObject Jogador;
@@ -21,8 +21,15 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
     public GeradorZumbis meuGerador;
     public GameObject ParticulaSangueZumbi;
 
-	// Use this for initialization
-	void Start () {
+    private ReservaFixa reserva;
+  
+
+    public void SetReserva(ReservaFixa reserva)
+    {
+        this.reserva = reserva;
+    }
+
+    void Start () {
         Jogador = GameObject.FindWithTag("Jogador");
         animacaoInimigo = GetComponent<AnimacaoPersonagem>();
         movimentaInimigo = GetComponent<MovimentoPersonagem>();
@@ -113,7 +120,7 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
 
     public void Morrer()
     {
-        Destroy(gameObject, 2);
+        Invoke("VoltarParaReserva", 2);
         animacaoInimigo.Morrer();
         movimentaInimigo.Morrer();
         this.enabled = false;
@@ -123,6 +130,10 @@ public class ControlaInimigo : MonoBehaviour, IMatavel
         
     }
 
+    private void VoltarParaReserva()
+    {
+        this.reserva.DevolverObjeto(this.gameObject);
+    }
     void VerificarGeracaoKitMedico(float porcentagemGeracao)
     {
         if (Random.value <= porcentagemGeracao)
