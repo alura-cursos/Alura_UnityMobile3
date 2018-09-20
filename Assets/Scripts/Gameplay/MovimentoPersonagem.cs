@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class MovimentoPersonagem : MonoBehaviour
 {
-    private Rigidbody meuRigidbody;
     public Vector3 Direcao { get; protected set; }
+
+
+
+    private Rigidbody meuRigidbody;
+
     void Awake ()
     {
         meuRigidbody = GetComponent<Rigidbody>();
@@ -25,6 +29,7 @@ public class MovimentoPersonagem : MonoBehaviour
         meuRigidbody.MovePosition(
                 meuRigidbody.position +
                 Direcao * velocidade * Time.deltaTime);
+        
     }
 
     public void Rotacionar (Vector3 direcao)
