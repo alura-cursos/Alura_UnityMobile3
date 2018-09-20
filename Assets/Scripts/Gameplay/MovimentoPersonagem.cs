@@ -5,9 +5,6 @@ using UnityEngine;
 public class MovimentoPersonagem : MonoBehaviour
 {
     public Vector3 Direcao { get; protected set; }
-
-
-
     private Rigidbody meuRigidbody;
 
     void Awake ()
@@ -22,7 +19,7 @@ public class MovimentoPersonagem : MonoBehaviour
 
     public void SetDirecao(Vector3 direcao)
     {
-        this.Direcao = direcao;
+        this.Direcao = direcao.normalized;
     }
     public void Movimentar (float velocidade)
     {
