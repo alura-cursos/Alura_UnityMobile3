@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class BotaoAnalogico : MonoBehaviour, IDragHandler
+public class BotaoAnalogico : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField]
     private RectTransform imagemFundo;
@@ -55,6 +55,18 @@ public class BotaoAnalogico : MonoBehaviour, IDragHandler
             );
 
         return posicao;
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        this.PosicionarJoystick(Vector2.zero);
+        this.QuandoMudarOValor.Invoke(Vector2.zero);
+        Debug.Log("Soltou o mouse");
+    }
+
+    public void OnPointerDown(PointerEventData dadosDoMouse)
+    {
+        this.OnDrag(dadosDoMouse);
     }
 }
 [Serializable]
