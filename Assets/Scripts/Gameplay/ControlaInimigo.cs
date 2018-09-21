@@ -28,11 +28,15 @@ public class ControlaInimigo : MonoBehaviour, IMatavel, IReservavel
     {
         this.reserva = reserva;
     }
+    private void Awake()
+    {
+        animacaoInimigo = GetComponent<AnimacaoPersonagem>();
+        movimentaInimigo = GetComponent<MovimentoPersonagem>();
+    }
 
     void Start () {
         Jogador = GameObject.FindWithTag("Jogador");
-        animacaoInimigo = GetComponent<AnimacaoPersonagem>();
-        movimentaInimigo = GetComponent<MovimentoPersonagem>();
+        
         AleatorizarZumbi();
         statusInimigo = GetComponent<Status>();
         scriptControlaInterface = GameObject.FindObjectOfType(typeof(ControlaInterface)) as ControlaInterface;
@@ -132,6 +136,7 @@ public class ControlaInimigo : MonoBehaviour, IMatavel, IReservavel
 
     private void VoltarParaReserva()
     {
+       
         this.reserva.DevolverObjeto(this.gameObject);
     }
     void VerificarGeracaoKitMedico(float porcentagemGeracao)
@@ -140,5 +145,17 @@ public class ControlaInimigo : MonoBehaviour, IMatavel, IReservavel
         {
             Instantiate(KitMedicoPrefab, transform.position, Quaternion.identity);
         }
+    }
+
+    public void AoEntrarNaReserva()
+    {
+        this.movimentaInimigo.Reiniciar();
+        this.enabled = true;
+        this.gameObject.SetActive(false);
+    }
+
+    public void AoSairDaReserva()
+    {
+        this.gameObject.SetActive(true);
     }
 }

@@ -21,7 +21,6 @@ public class Bala : MonoBehaviour, IReservavel
         rigidbodyBala = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void FixedUpdate () {
         rigidbodyBala.MovePosition
             (rigidbodyBala.position + 
@@ -45,6 +44,16 @@ public class Bala : MonoBehaviour, IReservavel
             break;
         }
 
-        Destroy(gameObject);
+        this.reserva.DevolverObjeto(this.gameObject);
+    }
+
+    public void AoEntrarNaReserva()
+    {
+        this.gameObject.SetActive(false);
+    }
+
+    public void AoSairDaReserva()
+    {
+        this.gameObject.SetActive(true);
     }
 }

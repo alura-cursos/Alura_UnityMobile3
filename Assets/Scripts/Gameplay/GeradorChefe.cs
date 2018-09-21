@@ -6,7 +6,7 @@ public class GeradorChefe : MonoBehaviour
 {
     private float tempoParaProximaGeracao = 0;
     public float tempoEntreGeracoes = 60;
-    public GameObject ChefePrefab;
+    public ReservaFixa reservaDeChefes;
     private ControlaInterface scriptControlaInteface;
     public Transform[] PosicoesPossiveisDeGeracao;
     private Transform jogador;
@@ -22,14 +22,19 @@ public class GeradorChefe : MonoBehaviour
     {
         if (Time.timeSinceLevelLoad > tempoParaProximaGeracao)
         {
-            Vector3 posicaoDeCriacao = CalcularPosicaoMaisDistanteDoJogador();
-            Instantiate(ChefePrefab, posicaoDeCriacao, Quaternion.identity);
-            scriptControlaInteface.AparecerTextoChefeCriado();
-            tempoParaProximaGeracao = Time.timeSinceLevelLoad + tempoEntreGeracoes;
+            if (this.reservaDeChefes.TemObjeto())
+            {
+                Vector3 posicaoDeCriacao = CalcularPosicaoMaisDistanteDoJogador();
+                var chefe = this.reservaDeChefes.PegarObjeto();
+                var controleChefe = chefe.GetComponent<ControlaChefe>();
+                controleChefe.SetPosicao(posicaoDeCriacao);
+                scriptControlaInteface.AparecerTextoChefeCriado();
+                tempoParaProximaGeracao = Time.timeSinceLevelLoad + tempoEntreGeracoes;
+            }
         }
     }
 
-    Vector3 CalcularPosicaoMaisDistanteDoJogador ()
+    Vector3 CalcularPosicaoMaisDistanteDoJogador()
     {
         Vector3 posicaoDeMaiorDistancia = Vector3.zero;
         float maiorDistancia = 0;
@@ -37,7 +42,7 @@ public class GeradorChefe : MonoBehaviour
         foreach (Transform posicao in PosicoesPossiveisDeGeracao)
         {
             float distanciaEntreOJogador = Vector3.Distance(posicao.position, jogador.position);
-            if(distanciaEntreOJogador > maiorDistancia)
+            if (distanciaEntreOJogador > maiorDistancia)
             {
                 maiorDistancia = distanciaEntreOJogador;
                 posicaoDeMaiorDistancia = posicao.position;

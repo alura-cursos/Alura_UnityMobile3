@@ -34,14 +34,16 @@ public class ReservaFixa : MonoBehaviour {
 
     public void DevolverObjeto(GameObject objeto)
     {
-        objeto.SetActive(false);
+        var objetoReservavel = objeto.GetComponent<IReservavel>();
+        objetoReservavel.AoEntrarNaReserva();
         this.reserva.Push(objeto);
     }
 
     public GameObject PegarObjeto()
     {
         var objeto = this.reserva.Pop();
-        objeto.SetActive(true);
+        var objetoReservavel = objeto.GetComponent<IReservavel>();
+        objetoReservavel.AoSairDaReserva();
         return objeto;
     }
 

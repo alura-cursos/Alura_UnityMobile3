@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IReservavel  {
 
     void SetReserva(ReservaFixa reserva);
+    void AoEntrarNaReserva();
+    void AoSairDaReserva();
 }
