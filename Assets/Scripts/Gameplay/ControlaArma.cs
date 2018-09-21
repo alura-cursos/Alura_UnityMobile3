@@ -5,7 +5,7 @@ using UnityEngine;
 public class ControlaArma : MonoBehaviour
 {
 
-    public ReservaFixa reservaDeBalas;
+    public ReservaExtensivel reservaDeBalas;
     public GameObject CanoDaArma;
     public AudioClip SomDoTiro;
 

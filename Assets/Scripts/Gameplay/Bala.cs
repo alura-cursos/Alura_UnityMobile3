@@ -9,9 +9,9 @@ public class Bala : MonoBehaviour, IReservavel
     private Rigidbody rigidbodyBala;
     public AudioClip SomDeMorte;
 
-    private ReservaFixa reserva;
+    private IReservaDeObjetos reserva;
 
-    public void SetReserva(ReservaFixa reserva)
+    public void SetReserva(IReservaDeObjetos reserva)
     {
         this.reserva = reserva;
     }

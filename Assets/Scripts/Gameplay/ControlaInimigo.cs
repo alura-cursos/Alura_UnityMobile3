@@ -21,10 +21,10 @@ public class ControlaInimigo : MonoBehaviour, IMatavel, IReservavel
     public GeradorZumbis meuGerador;
     public GameObject ParticulaSangueZumbi;
 
-    private ReservaFixa reserva;
+    private IReservaDeObjetos reserva;
   
 
-    public void SetReserva(ReservaFixa reserva)
+    public void SetReserva(IReservaDeObjetos reserva)
     {
         this.reserva = reserva;
     }

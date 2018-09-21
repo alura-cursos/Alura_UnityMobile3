@@ -16,7 +16,7 @@ public class ControlaChefe : MonoBehaviour, IMatavel, IReservavel
     public Image ImagelSlider;
     public Color CorDaVidaMaxima, CorDaVidaMinima;
     public GameObject ParticulaSangueZumbi;
-    private ReservaFixa reserva;
+    private IReservaDeObjetos reserva;
 
     private void Awake()
     {
@@ -104,7 +104,7 @@ public class ControlaChefe : MonoBehaviour, IMatavel, IReservavel
         ImagelSlider.color = corDaVida;
     }
 
-    public void SetReserva(ReservaFixa reserva)
+    public void SetReserva(IReservaDeObjetos reserva)
     {
         this.reserva = reserva;
     }

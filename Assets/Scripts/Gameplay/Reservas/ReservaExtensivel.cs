@@ -1,28 +1,18 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReservaFixa : MonoBehaviour, IReservaDeObjetos
+public class ReservaExtensivel : MonoBehaviour, IReservaDeObjetos
 {
+
     [SerializeField]
     private GameObject prefab;
-    [SerializeField]
-    private int quantidade;
 
     private Stack<GameObject> reserva;
-	
-	private void Awake () {
-        this.reserva = new Stack<GameObject>();
-        this.CriarTodosOsObjetos();
-	}
 
-    private void CriarTodosOsObjetos()
+    private void Awake()
     {
-       for(var i=0; i<this.quantidade; i++)
-        {
-            this.CriarNovoObjeto();
-        }
+        this.reserva = new Stack<GameObject>();
     }
 
     private void CriarNovoObjeto()
@@ -42,6 +32,11 @@ public class ReservaFixa : MonoBehaviour, IReservaDeObjetos
 
     public GameObject PegarObjeto()
     {
+        if(this.reserva.Count <= 0)
+        {
+            this.CriarNovoObjeto();
+        }
+
         var objeto = this.reserva.Pop();
         var objetoReservavel = objeto.GetComponent<IReservavel>();
         objetoReservavel.AoSairDaReserva();
@@ -50,6 +45,6 @@ public class ReservaFixa : MonoBehaviour, IReservaDeObjetos
 
     public bool TemObjeto()
     {
-        return this.reserva.Count > 0;
+        return true;
     }
 }
