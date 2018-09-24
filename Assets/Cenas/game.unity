@@ -1222,6 +1222,11 @@ Prefab:
       propertyPath: reserva
       value: 
       objectReference: {fileID: 2017832058}
+    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
+        type: 2}
+      propertyPath: reservaDeZumbis
+      value: 
+      objectReference: {fileID: 2017832057}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
   m_IsPrefabParent: 0
@@ -2253,6 +2258,11 @@ Prefab:
       propertyPath: reserva
       value: 
       objectReference: {fileID: 2017832058}
+    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
+        type: 2}
+      propertyPath: reservaDeZumbis
+      value: 
+      objectReference: {fileID: 2017832057}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
   m_IsPrefabParent: 0
@@ -2412,6 +2422,11 @@ Prefab:
       propertyPath: reserva
       value: 
       objectReference: {fileID: 2017832058}
+    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
+        type: 2}
+      propertyPath: reservaDeZumbis
+      value: 
+      objectReference: {fileID: 2017832057}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
   m_IsPrefabParent: 0
@@ -4619,6 +4634,11 @@ Prefab:
       propertyPath: reserva
       value: 
       objectReference: {fileID: 2017832058}
+    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
+        type: 2}
+      propertyPath: reservaDeZumbis
+      value: 
+      objectReference: {fileID: 2017832057}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
   m_IsPrefabParent: 0
@@ -5362,6 +5382,11 @@ Prefab:
       propertyPath: reserva
       value: 
       objectReference: {fileID: 2017832058}
+    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
+        type: 2}
+      propertyPath: reservaDeZumbis
+      value: 
+      objectReference: {fileID: 2017832057}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
   m_IsPrefabParent: 0
@@ -11859,6 +11884,11 @@ Prefab:
       propertyPath: reserva
       value: 
       objectReference: {fileID: 2017832058}
+    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
+        type: 2}
+      propertyPath: reservaDeZumbis
+      value: 
+      objectReference: {fileID: 2017832057}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
   m_IsPrefabParent: 0
@@ -12861,6 +12891,11 @@ Prefab:
       propertyPath: reserva
       value: 
       objectReference: {fileID: 2017832058}
+    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
+        type: 2}
+      propertyPath: reservaDeZumbis
+      value: 
+      objectReference: {fileID: 2017832057}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
   m_IsPrefabParent: 0
@@ -13999,7 +14034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1063500868937916, guid: cce5123bcfa01754bb7909f5bb14ef9f, type: 2}
-  quantidade: 1
+  quantidade: 2
 --- !u!4 &1844694647
 Transform:
   m_ObjectHideFlags: 0
@@ -15319,7 +15354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
-  quantidade: 1
+  quantidade: 20
 --- !u!4 &2017832059
 Transform:
   m_ObjectHideFlags: 0

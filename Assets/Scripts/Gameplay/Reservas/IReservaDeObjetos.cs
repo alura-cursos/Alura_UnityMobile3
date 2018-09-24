@@ -7,4 +7,5 @@ public interface IReservaDeObjetos  {
     void DevolverObjeto(GameObject objeto);
     GameObject PegarObjeto();
     bool TemObjeto();
+
 }

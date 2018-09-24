@@ -7,4 +7,5 @@ public interface IReservavel  {
     void SetReserva(IReservaDeObjetos reserva);
     void AoEntrarNaReserva();
     void AoSairDaReserva();
+
 }

@@ -11,11 +11,16 @@ public class ControlaArma : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        var toquesNaTela = Input.touches;
+        foreach(var toque in toquesNaTela)
         {
-            this.Atirar();
-            ControlaAudio.instancia.PlayOneShot(SomDoTiro);
+            if(toque.phase == TouchPhase.Began)
+            {
+                this.Atirar();
+                ControlaAudio.instancia.PlayOneShot(SomDoTiro);
+            }
         }
+      
     }
 
     private void Atirar()
