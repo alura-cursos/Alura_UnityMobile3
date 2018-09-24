@@ -5,17 +5,20 @@ using UnityEngine;
 public class MovimentoJogador : MovimentoPersonagem
 {
     [SerializeField]
-    private AudioSource audio;
+    private CaixaDeSom audio;
 
     public void AudioPasso()
     {
-        audio.Play();
+        audio.Tocar();
     }
 
     public void RotacaoJogador()
     {
-        Vector3 posicaoMiraJogador = this.Direcao;
-        posicaoMiraJogador.y = transform.position.y;
-        Rotacionar(posicaoMiraJogador);
+        if (this.Direcao != Vector3.zero)
+        {
+            Vector3 posicaoMiraJogador = this.Direcao;
+            posicaoMiraJogador.y = transform.position.y;
+            Rotacionar(posicaoMiraJogador);
+        }
     }
 }
