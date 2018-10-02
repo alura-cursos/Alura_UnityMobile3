@@ -1,0 +1,165 @@
+From 44ff19873445169b6d9a1e37d8494c6edb81366d Mon Sep 17 00:00:00 2001
+From: Ricardo Bugan <dones.bugan@hotmail.com>
+Date: Mon, 24 Sep 2018 14:59:47 -0300
+Subject: [PATCH] Video 5.1
+
+---
+ Assets/Cenas/game.unity                       | 39 ++++++++++++++++++-
+ Assets/Scripts/Gameplay/ControlaArma.cs       | 11 ++++--
+ .../Gameplay/Reservas/IReservaDeObjetos.cs    |  1 +
+ .../Scripts/Gameplay/Reservas/IReservavel.cs  |  1 +
+ 4 files changed, 47 insertions(+), 5 deletions(-)
+
+diff --git a/Assets/Cenas/game.unity b/Assets/Cenas/game.unity
+index 1700407..3182c1f 100644
+--- a/Assets/Cenas/game.unity
++++ b/Assets/Cenas/game.unity
+@@ -1222,6 +1222,11 @@ Prefab:
+       propertyPath: reserva
+       value: 
+       objectReference: {fileID: 2017832058}
++    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
++        type: 2}
++      propertyPath: reservaDeZumbis
++      value: 
++      objectReference: {fileID: 2017832057}
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
+   m_IsPrefabParent: 0
+@@ -2253,6 +2258,11 @@ Prefab:
+       propertyPath: reserva
+       value: 
+       objectReference: {fileID: 2017832058}
++    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
++        type: 2}
++      propertyPath: reservaDeZumbis
++      value: 
++      objectReference: {fileID: 2017832057}
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
+   m_IsPrefabParent: 0
+@@ -2412,6 +2422,11 @@ Prefab:
+       propertyPath: reserva
+       value: 
+       objectReference: {fileID: 2017832058}
++    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
++        type: 2}
++      propertyPath: reservaDeZumbis
++      value: 
++      objectReference: {fileID: 2017832057}
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
+   m_IsPrefabParent: 0
+@@ -4619,6 +4634,11 @@ Prefab:
+       propertyPath: reserva
+       value: 
+       objectReference: {fileID: 2017832058}
++    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
++        type: 2}
++      propertyPath: reservaDeZumbis
++      value: 
++      objectReference: {fileID: 2017832057}
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
+   m_IsPrefabParent: 0
+@@ -5362,6 +5382,11 @@ Prefab:
+       propertyPath: reserva
+       value: 
+       objectReference: {fileID: 2017832058}
++    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
++        type: 2}
++      propertyPath: reservaDeZumbis
++      value: 
++      objectReference: {fileID: 2017832057}
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
+   m_IsPrefabParent: 0
+@@ -11859,6 +11884,11 @@ Prefab:
+       propertyPath: reserva
+       value: 
+       objectReference: {fileID: 2017832058}
++    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
++        type: 2}
++      propertyPath: reservaDeZumbis
++      value: 
++      objectReference: {fileID: 2017832057}
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
+   m_IsPrefabParent: 0
+@@ -12861,6 +12891,11 @@ Prefab:
+       propertyPath: reserva
+       value: 
+       objectReference: {fileID: 2017832058}
++    - target: {fileID: 114875949034787928, guid: 6bc057c9c31344144820fa28af2133b0,
++        type: 2}
++      propertyPath: reservaDeZumbis
++      value: 
++      objectReference: {fileID: 2017832057}
+     m_RemovedComponents: []
+   m_ParentPrefab: {fileID: 100100000, guid: 6bc057c9c31344144820fa28af2133b0, type: 2}
+   m_IsPrefabParent: 0
+@@ -13999,7 +14034,7 @@ MonoBehaviour:
+   m_Name: 
+   m_EditorClassIdentifier: 
+   prefab: {fileID: 1063500868937916, guid: cce5123bcfa01754bb7909f5bb14ef9f, type: 2}
+-  quantidade: 1
++  quantidade: 2
+ --- !u!4 &1844694647
+ Transform:
+   m_ObjectHideFlags: 0
+@@ -15319,7 +15354,7 @@ MonoBehaviour:
+   m_Name: 
+   m_EditorClassIdentifier: 
+   prefab: {fileID: 1063500868937916, guid: 35861510587b7489780fe86970823679, type: 2}
+-  quantidade: 1
++  quantidade: 20
+ --- !u!4 &2017832059
+ Transform:
+   m_ObjectHideFlags: 0
+diff --git a/Assets/Scripts/Gameplay/ControlaArma.cs b/Assets/Scripts/Gameplay/ControlaArma.cs
+index 4680838..d46c958 100644
+--- a/Assets/Scripts/Gameplay/ControlaArma.cs
++++ b/Assets/Scripts/Gameplay/ControlaArma.cs
+@@ -11,11 +11,16 @@ public class ControlaArma : MonoBehaviour
+ 
+     private void Update()
+     {
+-        if (Input.GetButtonDown("Fire1"))
++        var toquesNaTela = Input.touches;
++        foreach(var toque in toquesNaTela)
+         {
+-            this.Atirar();
+-            ControlaAudio.instancia.PlayOneShot(SomDoTiro);
++            if(toque.phase == TouchPhase.Began)
++            {
++                this.Atirar();
++                ControlaAudio.instancia.PlayOneShot(SomDoTiro);
++            }
+         }
++      
+     }
+ 
+     private void Atirar()
+diff --git a/Assets/Scripts/Gameplay/Reservas/IReservaDeObjetos.cs b/Assets/Scripts/Gameplay/Reservas/IReservaDeObjetos.cs
+index e1c0125..3ea7726 100644
+--- a/Assets/Scripts/Gameplay/Reservas/IReservaDeObjetos.cs
++++ b/Assets/Scripts/Gameplay/Reservas/IReservaDeObjetos.cs
+@@ -7,4 +7,5 @@ public interface IReservaDeObjetos  {
+     void DevolverObjeto(GameObject objeto);
+     GameObject PegarObjeto();
+     bool TemObjeto();
++
+ }
+diff --git a/Assets/Scripts/Gameplay/Reservas/IReservavel.cs b/Assets/Scripts/Gameplay/Reservas/IReservavel.cs
+index c71055b..f9b82e0 100644
+--- a/Assets/Scripts/Gameplay/Reservas/IReservavel.cs
++++ b/Assets/Scripts/Gameplay/Reservas/IReservavel.cs
+@@ -7,4 +7,5 @@ public interface IReservavel  {
+     void SetReserva(IReservaDeObjetos reserva);
+     void AoEntrarNaReserva();
+     void AoSairDaReserva();
++
+ }
+-- 
+2.17.1.windows.2
+
